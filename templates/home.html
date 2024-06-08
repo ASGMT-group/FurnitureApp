@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'hero.html' %}
+
+<div class="unique">
+    <div class="unique-items">
+        <img class="uniq" src="{% static 'images/Secured.png' %}" alt="">
+        <p class="txt">Secure Shoping</p>
+    </div>
+    <div class="unique-items">
+        <img class="uniq" src="{% static 'images/247s.png' %}" alt="">
+        <p class="txt">Support 24/7</p>
+    </div>
+    <div class="unique-items">
+        <img class="uniq" src="{% static 'images/7d.png' %}" alt="">
+        <p class="txt">7 Day Return</p>
+    </div>
+    <div class="unique-items">
+        <img class="uniq" src="{% static 'images/ship.png' %}" alt="">
+        <p class="txt">Free Delivery</p>
+    </div>
+</div>
+<div class="heading">
+    <h1>Featured Products</h1>
+</div>
+<!-- <h1>Featured Products</h1> -->
+{% include 'catalog.html' %}
+<div class="heading">
+    <h1>New Arrivals</h1>
+</div>
+{% include 'catalog.html' %}
+{% endblock %}
+        
+ 

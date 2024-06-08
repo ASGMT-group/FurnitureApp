@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterd</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/filter.css' %}">
+</head>
+<body>
+    <div class="cointainer">
+        <div class="title">
+            <div  class="t-name bold heading">
+                <p style="font-size: 45px;" class="heading">Collections</p>
+            </div>
+            <div class="back-icon">
+                <img src="{% static 'images/arrow.png' %}" alt="">
+            </div>
+        </div>
+        <div class="filter-container">
+            <div class="search-container bold">
+                <h3 style="font-size: 45px;">Type</h3>
+            </div>
+            <div class="search-container">
+                <select id="select">
+                <option value="">Type</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+                </select>
+            </div>
+            <div class="search-container">
+              <input type="text" placeholder="Search name" />
+              <button>Search</button>
+            </div>
+          </div>
+    </div>
+    {% block content %}
+    <div class="items-cont">
+        {% include 'catalog.html' %}
+    </div>
+    {% endblock %}
+</body>
+</html>

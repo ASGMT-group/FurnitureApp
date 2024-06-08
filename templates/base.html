@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-bar">
+            <div class="logo">
+              <img style="width: 100px; height: 100px;"  src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+            <div class="menus">
+                <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Account</a></li>
+                </ul>
+            </div>
+            <div class="icons">
+              <a href=""><img class="menuicons" src="{% static 'images/cart.png' %}" alt=""></a>
+              <a href=""><img class="menuicons" src="{% static 'images/profile.png' %}" alt=""></a>
+          </div>
+        </div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
