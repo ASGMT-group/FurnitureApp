@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css/figmaregistration.css' %}" />
+    <style>
+      .login{
+          background-image: url('{% static "images/figma.jpg" %}');
+          background-size: cover;
+          height: 80vh;
+          padding-top: 50px;
+          color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+    <form class="form" method="post" action="{% url 'register' %}">
+      {% csrf_token  %}
+      {% if error %}
+      {{error}}
+      {% endif %}
+      {{form}}
+      <input type="submit" value="Register" />
+    </form>
+  </div>
+  </body>
+</html>
+
+{% endblock %}

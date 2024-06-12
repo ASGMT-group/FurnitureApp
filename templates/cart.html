@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body> 
+    <div id='cart-body'>
+    <div class="cart-card">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+          <a href="{% url 'home' %}" class="back-arrow">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          
+        </div>
+        {% for item in cart %}
+        <div class="cart-items">
+          <div class="cart-item">
+            <div class="item-info">
+              <img src="{{item.item_picture.url}}" alt="Item Image">
+              <div class="item-details">
+                <h3>{{item.item_name}}</h3>
+               
+              </div>
+            </div>
+            <div class="item-quantity">
+              <h3>{{item.item_price}} ETB</h3>
+              <!--remove item-->
+              <a style="margin-left: 30px;" href="{% url 'delete_item' item_id=item.id %}">
+                <i class="fas fa-times"></i>
+              </a>
+            </div>
+          </div>
+        
+          <!-- Add more cart items here -->
+        </div>
+        {% endfor %}
+        
+        <div class="cart-total">
+          <p>Total: {{total_price}} ETB</p>
+          <button class="checkout-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+{% endblock %}

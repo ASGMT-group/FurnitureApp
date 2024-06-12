@@ -2,6 +2,7 @@
 .cointainer{
     margin-left: 6%;
     font-size: 45px;
+    margin-top: 2%;
     
 }
 .t-name{
@@ -14,6 +15,14 @@
 .items-cont{
     margin-left: 5%;
 }
+
+.cont{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10px;
+}
+
+
 .title{
     display: flex;
     justify-content: space-between;
@@ -29,9 +38,14 @@
     
 }
 .filter-container {
-    display: grid;
-    grid-template-columns: 1fr 7fr 7fr;
-    margin-top: -30px;
+    /* border: solid 3px #ccc; */
+    display: flex;
+    flex-direction: row;
+    /* margin-top: -30px; */
+    padding: 0;
+    /* border-radius: 20px; */
+    width: 90%;
+    margin-left: 5%;
   }
   
   .filter-container select {
@@ -39,12 +53,15 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 10px;
+    padding: 0px;
+    width: 50%;
 
   }
   
   .search-container {
     display: flex;
     align-items: center;
+    flex-direction: row;
   }
   
   .search-container input {
@@ -53,7 +70,7 @@
     border-radius: 20px;
     height: 50px;
     margin-right: 10px;
-    width: 90%;
+    width: 50%;
   }
   
   .search-container button {

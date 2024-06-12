@@ -2,133 +2,62 @@
 
 {% block content %}
 
-<div class="catalogue-cont">
+
     <div class="catal-item">
         <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
+            <!--Item detail-->
+            {{item.id}}
+            <a href="">
+
+                <img src="{% static 'images/prod.png' %}" alt="">
+            </a>
+
+            <p class="item-name">{{item.item_name}}</p>
             <div class="price-cart">
                 <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
+                    <p class="item-price bold" >ETB {{item.item_price}}</p>
                 </div>
+
+
+
                 <div class="cart">
+                    <a href="">
                     <img src="{% static 'images/cartp.png' %}" alt="">
+                    </a>
                 </div>
             </div>
             <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
+               
+                {% if item.get_rating >= 1 %}
+                    <img src="{% static 'images/filled_star.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'images/empty_star.png' %}" alt="">
+                {% endif %}
+                {% if item.get_rating >= 2 %}
+                    <img src="{% static 'images/filled_star.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'images/empty_star.png' %}" alt="">
+                {% endif %}
+                {% if item.get_rating >= 3 %}
+                    <img src="{% static 'images/filled_star.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'images/empty_star.png' %}" alt="">
+                {% endif %}
+                {% if item.get_rating >= 4 %}
+                    <img src="{% static 'images/filled_star.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'images/empty_star.png' %}" alt="">
+                {% endif %}
+                {% if item.get_rating >= 5 %}
+                    <img src="{% static 'images/filled_star.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'images/empty_star.png' %}" alt="">
+                {% endif %}
             </div>
         </div>
+          
     </div>
-    <div class="catal-item">
-        <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
-            <div class="price-cart">
-                <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
-                </div>
-                <div class="cart">
-                    <img src="{% static 'images/cartp.png' %}" alt="">
-                </div>
-            </div>
-            <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="catal-item">
-        <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
-            <div class="price-cart">
-                <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
-                </div>
-                <div class="cart">
-                    <img src="{% static 'images/cartp.png' %}" alt="">
-                </div>
-            </div>
-            <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="catal-item">
-        <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
-            <div class="price-cart">
-                <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
-                </div>
-                <div class="cart">
-                    <img src="{% static 'images/cartp.png' %}" alt="">
-                </div>
-            </div>
-            <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="catal-item">
-        <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
-            <div class="price-cart">
-                <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
-                </div>
-                <div class="cart">
-                    <img src="{% static 'images/cartp.png' %}" alt="">
-                </div>
-            </div>
-            <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="catal-item">
-        <div class="item-cont">
-            <img src="{% static 'images/prod.png' %}" alt="">
-            <p class="item-name">Dinning Table</p>
-            <div class="price-cart">
-                <div>
-                    <p class="item-price bold" >ETB 25,000 </p>
-                </div>
-                <div class="cart">
-                    <img src="{% static 'images/cartp.png' %}" alt="">
-                </div>
-            </div>
-            <div class="rating">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-                <img src="{% static 'images/rate.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-</div>
+    
+
 
 {% endblock %}

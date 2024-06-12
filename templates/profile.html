@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+    <div class="main">
+      <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{request.user.profile_pic.url}}" alt="User Avatar" class="profile-avatar">
+            {% if request.user.username %}
+            <h1 class="profile-name">{{request.user.username}}</h1>
+            {% else %}
+            <h1 class="profile-name">{{request.user}}</h1>
+            {% endif %}
+            <!-- <p class="profile-username">@johndoe</p> -->
+        </div>
+        <div class="profile-body">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: {{request.user.email}}</li>
+                <li>Phone: {{request.user.phone_number}}</li>
+                
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}

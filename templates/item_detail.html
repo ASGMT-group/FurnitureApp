@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="catal-item">
+            <div class="item-cont">
+                <!--Item detail-->
+               
+                <a href="{% url 'detail' item_id=item.id %}">
+    
+                    <img style="width: 100%; height: 10; border-radius: 30px;" src="{{item.item_picture.url}}" alt="">
+                </a>
+    
+                <p class="item-name">{{item.item_name}}</p>
+                <div class="price-cart">
+                    <div>
+                        <p class="item-price bold" >ETB {{item.item_price}}</p>
+                    </div>
+    
+    
+    
+                    <div class="cart">
+                        <a href="{% url 'add_to_cart' item_id=item.id %}">
+                        <img src="{% static 'images/cartp.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="rating">
+            
+                    {% if item.get_rating >= 1 %}
+                        <img src="{% static 'images/filled_star.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/empty_star.png' %}" alt="">
+                    {% endif %}
+                    {% if item.get_rating >= 2 %}
+                        <img src="{% static 'images/filled_star.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/empty_star.png' %}" alt="">
+                    {% endif %}
+                    {% if item.get_rating >= 3 %}
+                        <img src="{% static 'images/filled_star.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/empty_star.png' %}" alt="">
+                    {% endif %}
+                    {% if item.get_rating >= 4 %}
+                        <img src="{% static 'images/filled_star.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/empty_star.png' %}" alt="">
+                    {% endif %}
+                    {% if item.get_rating >= 5 %}
+                        <img src="{% static 'images/filled_star.png' %}" alt="">
+                    {% else %}
+                        <img src="{% static 'images/empty_star.png' %}" alt="">
+                    {% endif %}
+                </div>
+               {% if not is_rated %}
+                <a style="text-decoration: none; " href="{% url 'rate_item' item.id %}">Rete product</a>
+                {% else %}
+                <p>Thank you for rating</p>
+                {% endif %}
+               
+            </div>
+              
+        </div>
+    
+        <div style="width: 95%;margin-top: 15%;" class="detail">
+            <h2 class="item-name">{{item.item_name}}</h2>
+            <p>{{item.item_description}}</p>
+        </div>
+    </div>
+    
+</body>
+</html>
+{% endblock %}

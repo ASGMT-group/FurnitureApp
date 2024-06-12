@@ -1,10 +1,43 @@
 {% block content %}
 {% load static %}
-<div  class="hero width-100">
-    <div class="hero-image width-100">
-        <img class="width-100" src="{% static 'images/bgd2.png' %}" alt="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        .hero{
+            background-image: url("{% static 'images/bgd.png' %}");
+            background-size: cover;
+            border-radius: 100px;
+            height: 80vh;   
+            /* display: grid;
+            grid-template-columns: 3fr 1fr; */
+        }
+        .leftside{
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div  class="hero width-100">
+        <div class="hero-image width-100">
+            
+        </div>
+        <div class="leftside">
+            <div class="text-part">
+
+            </div>
+            <div>
+               
+            </div>
+
+        </div>
+        
     </div>
-    
-</div>
+</body>
+</html>
 
 {% endblock %}
